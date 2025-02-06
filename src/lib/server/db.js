@@ -13,7 +13,6 @@ export async function fetchCatalogFromDB(query) {
 	return { title: `Book with slug ${slug}`, author: 'Author A' };
   }
   
-  // Example: Get recommendations based on semester
   export async function fetchRecommendations(semester) {
 	await new Promise((resolve) => setTimeout(resolve, 100));
 	return [

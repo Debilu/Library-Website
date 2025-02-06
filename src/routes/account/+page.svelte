@@ -5,7 +5,6 @@
 <main>
 	<h1>Your Account</h1>
 	<h2>Welcome, {data.user.username}!</h2>
-
 	<h2>Recommended Books for You</h2>
 	{#if data.recommendations.length > 0}
 		<ul>
