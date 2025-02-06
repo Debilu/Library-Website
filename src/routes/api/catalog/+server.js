@@ -1,7 +1,7 @@
 import { redisClient } from '$lib/server/redis';
 import { fetchCatalogFromDB } from '$lib/server/db';
 
-export async function get({ url }) {
+export async function GET({ url }) {
   const query = url.searchParams.get('q') || '';
   const cacheKey = `catalog:${query}`;
 
