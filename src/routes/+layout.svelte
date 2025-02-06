@@ -8,6 +8,6 @@
   <Header {data} />
   
   <main>
-	<slot />  <!-- This renders child pages dynamically -->
+	<slot />
   </main>
   

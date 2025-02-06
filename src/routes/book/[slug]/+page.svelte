@@ -2,8 +2,6 @@
 <script context="module">
 	// This load function runs on the client in CSR mode.
 	export async function load({ params, fetch }) {
-	  // For demo, we assume the book title is derived from the slug.
-	  // In a real app, you might query your database by slug first.
 	  const res = await fetch(`/api/book-details?title=${encodeURIComponent(params.slug)}`);
 	  if (!res.ok) throw new Error('Book not found');
 	  const book = await res.json();

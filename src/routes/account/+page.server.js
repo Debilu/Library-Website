@@ -6,7 +6,6 @@ export async function load({ locals }) {
 		throw redirect(302, '/login');
 	}
 
-	// Dummy book recommendations (replace with actual database query)
 	const recommendations = [
 		{ title: 'Svelte for Beginners', author: 'John Doe' },
 		{ title: 'Mastering JavaScript', author: 'Jane Smith' }

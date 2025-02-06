@@ -1,5 +1,4 @@
 export async function load({ url, locals, fetch }) {
-	// Optionally enforce authentication here:
 	// if (!locals.user) return { status: 302, redirect: '/login' };
   
 	const query = url.searchParams.get('q') || '';

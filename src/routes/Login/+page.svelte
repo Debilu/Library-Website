@@ -5,8 +5,8 @@
 	let password = '';
 	let error = '';
 
-	async function handleLogin(event) {
-		event.preventDefault();
+	async function handleLogin(e) {
+		e.preventDefault();
 		console.log('Received login attempt:', { username, password });
 
 		const res = await fetch('/api/auth', {
