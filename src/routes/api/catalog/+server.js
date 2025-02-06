@@ -1,27 +1,31 @@
-import { redisClient } from '$lib/server/redis';
-import { fetchCatalogFromDB } from '$lib/server/db';
-
 export async function GET({ url }) {
-  const query = url.searchParams.get('q') || '';
-  const cacheKey = `catalog:${query}`;
+  try {
+    // Extract query parameter
+    const query = url.searchParams.get('q')?.toLowerCase() || '';
 
-  // Try to serve from cache
-  const cachedData = await redisClient.get(cacheKey);
-  if (cachedData) {
-    return {
+    // Sample book data (Replace with DB query if needed)
+    const books = [
+      { id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald' },
+      { id: 2, title: '1984', author: 'George Orwell' },
+      { id: 3, title: 'To Kill a Mockingbird', author: 'Harper Lee' },
+      { id: 4, title: 'The Catcher in the Rye', author: 'J.D. Salinger' },
+    ];
+
+    // Filter books based on the query
+    const filteredBooks = books.filter(book =>
+      book.title.toLowerCase().includes(query) || book.author.toLowerCase().includes(query)
+    );
+
+    return new Response(JSON.stringify(filteredBooks), {
       status: 200,
-      body: JSON.parse(cachedData)
-    };
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+  } catch (error) {
+    console.error('API Error:', error);
+    return new Response(JSON.stringify({ error: 'Internal Server Error' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
-
-  // Otherwise, query your database
-  const catalogData = await fetchCatalogFromDB(query);
-
-  // Cache for 60 seconds
-  await redisClient.set(cacheKey, JSON.stringify(catalogData), { EX: 60 });
-
-  return {
-    status: 200,
-    body: catalogData
-  };
 }

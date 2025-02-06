@@ -2,11 +2,11 @@ import { json } from '@sveltejs/kit';
 import { signToken } from '$lib/server/auth';
 
 export async function POST({ request, cookies }) {
-	const { username, password } = await request.json();
+	const { username, password } = await request.json(); //Await request from login page
 
 	if (username === 'student' && password === 'password123') {
-		const user = { username, semester: 2, role: 'student' };
-		const token = signToken(user);
+		const user = { username, semester: 2, role: 'student' }; //Dummy values for user
+		const token = signToken(user); //
 
 		// Set JWT as a secure & HTTP-only cookie
 		cookies.set('jwt', token, {

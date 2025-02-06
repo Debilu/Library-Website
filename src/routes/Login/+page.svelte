@@ -1,19 +1,19 @@
 <script>
-	import { goto, invalidateAll } from '$app/navigation';
-
+	import { goto, invalidateAll } from '$app/navigation'; // Imported goto for navigation and invalidate all() for refreshing easily
+	//Intialise all the variables
 	let username = '';
 	let password = '';
 	let error = '';
-
+	//Async function to handle the login
 	async function handleLogin(e) {
-		e.preventDefault();
+		e.preventDefault(); //Prevents by default behaviour to submit
 		console.log('Received login attempt:', { username, password });
 
 		const res = await fetch('/api/auth', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ username, password })
-		});
+		}); //Fetch from api/auth if the username and password are correct
 
 		const result = await res.json();
 		if (res.ok) {

@@ -1,22 +1,25 @@
-// You can use node-fetch or the global fetch if available
-import { redisClient } from '$lib/server/redis';
-
 export async function GET({ url }) {
   const title = url.searchParams.get('title');
   if (!title) {
-    return { status: 400, body: { error: 'Missing book title' } };
+    return new Response(
+      JSON.stringify({ error: 'Missing book title' }),
+      { status: 400, headers: { 'Content-Type': 'application/json' } }
+    );
   }
 
-  const cacheKey = `book-details:${title}`;
-  const cached = await redisClient.get(cacheKey);
-  if (cached) {
-    return { status: 200, body: JSON.parse(cached) };
-  }
+  console.log(`Fetching book details for title: ${title}`); // Log the title being fetched
 
   const googleApiUrl = `https://www.googleapis.com/books/v1/volumes?q=intitle:${encodeURIComponent(title)}`;
+  
   try {
     const response = await fetch(googleApiUrl);
+    if (!response.ok) {
+      console.error('Failed to fetch from Google Books API', response.status); // Log if the fetch fails
+      throw new Error(`Google API returned status: ${response.status}`);
+    }
+
     const data = await response.json();
+    console.log('Google API data:', data); // Log the data received from Google API
 
     const bookInfo =
       data.items && data.items.length > 0
@@ -31,14 +34,17 @@ export async function GET({ url }) {
       infoLink: bookInfo.infoLink
     };
 
-    // Cache enriched data for 60 seconds
-    await redisClient.set(cacheKey, JSON.stringify(enrichedData), { EX: 60 });
+    console.log('Enriched data:', enrichedData); // Log the enriched data before returning it
 
-    return {
-      status: 200,
-      body: enrichedData
-    };
+    return new Response(
+      JSON.stringify(enrichedData),
+      { status: 200, headers: { 'Content-Type': 'application/json' } }
+    );
   } catch (err) {
-    return { status: 500, body: { error: 'Error fetching book details' } };
+    console.error('Error in fetching book details:', err); // Log any other errors
+    return new Response(
+      JSON.stringify({ error: 'Error fetching book details' }),
+      { status: 500, headers: { 'Content-Type': 'application/json' } }
+    );
   }
 }

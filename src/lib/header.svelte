@@ -47,6 +47,6 @@
 	{#if data.user}
 		<button on:click={logout}>Logout</button>
 	{:else}
-		<a href="/login">Login</a>
+		<a href="/login">->Login</a>
 	{/if}
 </header>
