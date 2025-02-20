@@ -9,8 +9,9 @@ export async function GET({ url }) {
 
   console.log(`Fetching book details for title: ${title}`); // Log the title being fetched
 
-  const googleApiUrl = `https://www.googleapis.com/books/v1/volumes?q=intitle:${encodeURIComponent(title)}`;
-  
+  const googleApiUrl = `https://www.googleapis.com/books/v1/volumes?q=intitle:${encodeURIComponent(title)}&key=AIzaSyB3ifXgsw-8ehNNzFiBO2qwvw0UK3St3Pk`;
+  console.log("Fetching URL:", googleApiUrl);
+
   try {
     const response = await fetch(googleApiUrl);
     if (!response.ok) {
