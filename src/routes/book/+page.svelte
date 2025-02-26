@@ -34,29 +34,36 @@
   </script>
   
   <main>
-	<h1>Book Details for "{query}"</h1>
-  
-	{#if isLoading}
-	  <p>Loading book details...</p>
-	{:else if error}
-	  <p style="color: red;">{error}</p>
-	{:else if book}
-	  <h2>{book.title}</h2>
-	  {#if book.image}
-		<img src="{book.image}" alt="{book.title} cover" />
-	  {/if}
-	  <p>{book.description}</p>
-	  {#if book.infoLink}
-		<a href="{book.infoLink}" target="_blank">More Information</a>
-	  {/if}
-	{:else}
-	  <p>Book not found.</p>
-	{/if}
+	<div class="container">
+		<!-- <h2>Book Details for "{query}"</h2> -->
+			{#if isLoading}
+				<p>Loading book details...</p>
+			{:else if error}
+				<p style="color: red;">{error}</p>
+			{:else if book}
+				{#if book.image}
+					<div class="book-cover">
+						<img src="{book.image}" alt="{book.title} cover" />
+					</div>
+				{/if}
+				<div class="content">
+					<h1>{book.title}</h1>
+					<p class="year">{book.year}</p>
+					<p class="author">{book.author}</p>
+					<p class="description">{book.description}</p>
+					{#if book.infoLink}
+						<a href="{book.infoLink}" target="_blank">More Information</a>
+					{/if}
+				</div>
+			{:else}
+			<p>Book not found.</p>
+			{/if}
+	</div>
   </main>
 
-  <!-- <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap" rel="stylesheet">
+  
     <style>
-        body {
+        main {
             background: linear-gradient(to left, #363883, #EDDDBF);
             font-family: 'IM Fell English', serif;
             margin:0;
@@ -84,6 +91,7 @@
         h1 {
             font-size: 32px;
             margin: 0;
+			color: #1F263A;
             
         }
         .author {
@@ -97,11 +105,6 @@
             color: #444;
             font-style: italic;
         }
-        .toc {
-            font-size: 14px;
-            margin-top: 10px;
-            line-height: 1.6;
-        }
         .description {
             margin-top: 15px;
             font-size: 16px;
@@ -111,6 +114,7 @@
             
         }
     </style>
+	<!-- 
 </head>
 <body>
     <div class="container">
