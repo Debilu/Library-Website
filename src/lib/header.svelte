@@ -21,7 +21,7 @@
 <style>
 	header {
 		padding: 1rem;
-		background-color: #f0f0f0;
+		background-color: #f0f0f000;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -40,13 +40,16 @@
 
 <header>
 	<nav>
-		<a href="/">Home</a>
-		<a href="/account">Account</a>
+		<a href="/">
+		<img src = "liblogo.png" alt = 'logo' width = '50px' height = '50px'>
+		</a>
 	</nav>
 
 	{#if data.user}
 		<button on:click={logout}>Logout</button>
 	{:else}
-		<a href="/login">->Login</a>
+		<a href="/login">
+		<img src="login_icon.png" alt="login" width="100px" height="100px">
+		</a>
 	{/if}
 </header>
