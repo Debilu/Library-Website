@@ -28,13 +28,6 @@
 </script>
 
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #1e1e30;
-        color: white;
-        overflow-x: hidden;
-    }
     .header {
         position: absolute;
         top: 0;
