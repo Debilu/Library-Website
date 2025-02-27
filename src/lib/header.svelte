@@ -21,7 +21,7 @@
 <style>
 	header {
 		padding: 1rem;
-		background-color: #f0f0f000;
+		background-color: none;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -29,12 +29,13 @@
 	nav a {
 		margin-right: 1rem;
 		text-decoration: none;
-		color: #333;
+		color: #00000000;
 	}
 	button {
 		padding: 0.5rem 1rem;
 		font-size: 1rem;
 		cursor: pointer;
+		border: none;
 	}
 </style>
 
@@ -46,7 +47,9 @@
 	</nav>
 
 	{#if data.user}
-		<button on:click={logout}>Logout</button>
+		<button on:click={logout}>
+			<img src="logout.png" alt="logout" width="100px" height="100px">
+		</button>
 	{:else}
 		<a href="/login">
 		<img src="login_icon.png" alt="login" width="100px" height="100px">

@@ -52,7 +52,7 @@
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: radial-gradient(circle at center, #562a4d, #1b1c2b);
+    background-image: url('loginpage_bg.png');
     height: 100vh;
     display: flex;
     align-items: center;
@@ -66,19 +66,11 @@
     text-align: left;
 }
 
-.home {
-    position:top right;
-    top: 50px;
-    left: 30px;
-    font-size: 24px;
-    color: white;
-}
-
 .login-box {
-    background: rgba(50, 30, 50, 0.9);
+    background-image: url('loginBox.png');
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
     width: 350px;
     text-align: center;
     color: white;
@@ -89,28 +81,43 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* Input Container */
 .input-field {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 10px;
-    background: #ccc;
-    outline: none;
+    background: #d3d3d3; /* Light grey background */
+    border-radius: 30px;
+    padding: 10px 20px;
+    width: 300px;
+    display: flex;
+    align-items: center;
 }
 
-/* .login-btn {
-    background: rgb(87, 51, 154);
+/* Input Field 
+.input-field input {
     border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
+    outline: none;
+    background: none;
+    width: 100%;
+    font-size: 16px;
+    color: #333;
+}*/
+
+
+.login-btn {
+    background-color: #d3d3d3; /* Light gray background */
+    color: #4d51b1; 
+    font-size: 16px;
     font-weight: bold;
-    transition: 0.3s;
-} */
+    border: none;
+    border-radius: 30px;
+    padding: 10px 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 150px;
+    font-family: 'IBM Plex Mono', sans-serif;
+}
 
 .login-btn:hover {
-    background: #ddd;
+    background: #1F263A;
 }
 
 </style>
