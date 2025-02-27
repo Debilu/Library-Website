@@ -66,14 +66,6 @@
     text-align: left;
 }
 
-.home {
-    position:top right;
-    top: 50px;
-    left: 30px;
-    font-size: 24px;
-    color: white;
-}
-
 .login-box {
     background-image: url('loginBox.png');
     padding: 30px;
@@ -109,15 +101,7 @@ h2 {
     color: #333;
 }*/
 
-/* .login-btn {
-    background: rgb(87, 51, 154);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-} */
+
 .login-btn {
     background-color: #d3d3d3; /* Light gray background */
     color: #4d51b1; 
@@ -129,6 +113,7 @@ h2 {
     cursor: pointer;
     text-transform: uppercase;
     width: 150px;
+    font-family: 'IBM Plex Mono', sans-serif;
 }
 
 .login-btn:hover {
