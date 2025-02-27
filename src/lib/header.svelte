@@ -21,7 +21,7 @@
 <style>
 	header {
 		padding: 1rem;
-		background-color: #f0f0f000;
+		background-color: #00000000;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -29,7 +29,7 @@
 	nav a {
 		margin-right: 1rem;
 		text-decoration: none;
-		color: #333;
+		color: #00000000;
 	}
 	button {
 		padding: 0.5rem 1rem;

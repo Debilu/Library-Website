@@ -1,7 +1,6 @@
 <script>
 	export let data;
   </script>
-  
   <main>
 	{#if data.user}
 	  <h1>Welcome back, {data.user.username}!</h1>
