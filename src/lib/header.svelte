@@ -35,6 +35,7 @@
 		padding: 0.5rem 1rem;
 		font-size: 1rem;
 		cursor: pointer;
+		border: none;
 	}
 </style>
 
@@ -46,7 +47,9 @@
 	</nav>
 
 	{#if data.user}
-		<button on:click={logout}>Logout</button>
+		<button on:click={logout}>
+			<img src="logout.png" alt="logout" width="100px" height="100px">
+		</button>
 	{:else}
 		<a href="/login">
 		<img src="login_icon.png" alt="login" width="100px" height="100px">
