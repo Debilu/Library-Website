@@ -33,11 +33,6 @@
 		        <p style="color:red">{error}</p>
 	        {/if}
             <form on:submit={handleLogin}>
-                <!-- <label for="username">User name:</label>
-                <input type="text" id="username" class="input-field">
-                
-                <label for="password">Password:</label>
-                <input type="password" id="password" class="input-field"> -->
                 <input bind:value={username} type="text" placeholder="Username" required class="input-field" />
 		        <input bind:value={password} type="password" placeholder="Password" required  class="input-field" />
                 <button type="submit" class="login-btn">LOGIN</button>
@@ -53,6 +48,7 @@
     padding: 0;
     font-family: Arial, sans-serif;
     background-image: url('loginpage_bg.png');
+    background-size: cover;
     height: 100vh;
     display: flex;
     align-items: center;
