@@ -112,7 +112,8 @@ h2 {
     padding: 10px 25px;
     cursor: pointer;
     text-transform: uppercase;
-    width: 150px;
+    width: 125px;
+    height: 40px;
     font-family: 'IBM Plex Mono', sans-serif;
 }
 
