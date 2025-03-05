@@ -79,13 +79,14 @@
 
 h2 {
     margin-bottom: 20px;
+    color: #EDDDBF;
 }
 
 /* Input Container */
 .input-field {
-    background: #d3d3d3; /* Light grey background */
+    background: #EDDDBF; 
     border-radius: 30px;
-    padding: 10px 20px;
+    padding: 20px 20px;
     width: 300px;
     display: flex;
     align-items: center;
@@ -103,8 +104,8 @@ h2 {
 
 
 .login-btn {
-    background-color: #d3d3d3; /* Light gray background */
-    color: #4d51b1; 
+    background-color: #eedfc3b4; 
+    color: #5c523f; 
     font-size: 16px;
     font-weight: bold;
     border: none;
@@ -118,7 +119,8 @@ h2 {
 }
 
 .login-btn:hover {
-    background: #1F263A;
+    background-color: #d4c1a1;
+		transform: scale(1.05);
 }
 
 </style>
