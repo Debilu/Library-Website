@@ -3,6 +3,7 @@
 
     let showDropdown = false;
     let scrollY = 0;
+    let searchQuery = '';
 
     let handleScroll;
 
@@ -47,6 +48,10 @@
         left: 0;
         z-index: -1;
         transform: translateY(var(--scrollY, 0px));
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     .dropdown {
         position: fixed;
@@ -61,18 +66,11 @@
         border-radius: 10px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         opacity: 0;
+        width: 300px;
     }
     .dropdown.show {
         top: 100px;
         opacity: 1;
-    }
-    .content {
-        text-align: center;
-        padding: 50px 20px;
-        background-color: #1e1e30;
-        min-height: 200vh;
-        position: relative;
-        margin-top: 100vh;
     }
     .menu {
         display: flex;
@@ -95,13 +93,69 @@
         background-color: #50527b;
         transform: scale(1.05);
     }
+
+    /* Search Box Styling */
+    .search-container {
+        position: absolute;
+        bottom: 10%;
+        width: 100%;
+        text-align: center;
+    }
+    .search-box {
+        width: 60%;
+        max-width: 500px;
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        border-radius: 25px;
+        outline: none;
+        background-color: #292b45;
+        color: white;
+        text-align: center;
+        cursor: pointer; /* Pointer cursor added */
+        transition: all 0.3s ease-in-out; /* Smooth transition */
+    }
+    .search-box::placeholder {
+        color: #aaaaaa;
+    }
+    /* Hover & Focus Effect */
+    .search-box:hover {
+        background-color: #3a3d5b;
+        box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+        transform: scale(1.05);
+        cursor: pointer; /* Pointer cursor when hovering */
+    }
+    .search-box:focus {
+        background-color: #3a3d5b;
+        box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.3);
+        transform: scale(1.05);
+        cursor: text; /* Becomes text cursor when typing */
+    }
+
+    .content {
+        text-align: center;
+        padding: 50px 20px;
+        background-color: #1e1e30;
+        min-height: 200vh;
+        position: relative;
+        margin-top: 100vh;
+    }
 </style>
 
 <div class="header">
     <h2>Welcome to the Library</h2>
     <p>Explore books and get personalized recommendations.</p>
 </div>
-<div class="banner"></div>
+<div class="banner">
+    <div class="search-container">
+        <input 
+            type="text" 
+            class="search-box" 
+            placeholder="Search for books..." 
+            bind:value={searchQuery}
+        />
+    </div>
+</div>
 
 {#if showDropdown}
     <div class="dropdown show">
