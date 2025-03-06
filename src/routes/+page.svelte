@@ -3,7 +3,7 @@
   </script>
   <main>
 		{#if data.user}
-		<h1>Welcome back, {data.user.username}!</h1>
+		<img src="Welcome1.png" alt="Welcome" class="logo">
 		{:else}
 		<img src="Welcome1.png" alt="Welcome" class="logo">
 		<p>
