@@ -5,7 +5,7 @@
 		{#if data.user}
 		<h1>Welcome back, {data.user.username}!</h1>
 		{:else}
-		<h1 class="logo">Welcome to the Library</h1>
+		<img src="Welcome1.png" alt="Welcome" class="logo">
 		<p>
 			<a href="/login">Login</a> to access your account and personalized recommendations.
 			<br><br>
@@ -18,11 +18,8 @@
 			</form>
 		</div>
 		<br>
-		<div class="image-container">
-			<img src="library image.png" alt="Library Bookshelf">
-		</div>
 		<div>
-			<p>Explore books and get personalized recommendations.</p>
+			<p>Explore books and get personalised recommendations.</p>
 		</div>
 				
   </main>
@@ -34,40 +31,40 @@
 		font-family: 'Poppins', sans-serif;
 	}
 	main {
-	  background-image: url('loginpage_bg.png');
-	  background-size: cover;
-	  background-position: center;
-	  background-attachment: fixed;
-	  height: 100vh;
-	  display: flex;
-	  flex-direction: column;
-	  justify-content: center;
-	  align-items: center;
-	  text-align: center;
-	  color: white;
+		background-image: url('loginpage_bg.png');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		color: white;
 	}
 
 	.logo {
-    background: url('Welcome1.png') no-repeat center;
-    background-size: contain;
-    width: 200px; 
-    height: 80px; 
-    text-indent: -9999px;
-    overflow: hidden;
-    display: block;
-	}
+        background: url('Welcome1.png') no-repeat center;
+        background-size: contain; 
+        width: auto; 
+        height: 80px; 
+        display: block;
+        margin: 0 auto;
+    }
 
 	input[type="text"] {
-    width: 100%; 
-	height: 40px;
-    max-width: 700px; 
-    padding: 12px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 40px; 
-    background-color: #eedfc3b4; 
-    color: #333; 
-    outline: none; 
+		margin-bottom: 10px;
+		width: 100%; 
+		height: 40px;
+		max-width: 700px; 
+		padding: 12px 20px;
+		font-size: 16px;
+		border: none;
+		border-radius: 40px; 
+		background-color: #eedfc3b4; 
+		color: #333; 
+		outline: none; 
 	}
 	
 	input[type="text"]::placeholder {
@@ -101,20 +98,5 @@
 		transform: scale(0.98);
 	}
 
-	.image-container {
-		position: relative;
-		width: 100%;
-		max-width: auto;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin: 0 20px;
-		overflow: hidden;
-	}
-
-	.image-container img {
-		width: 80%;
-		height: auto;
-		border-radius: 150px;
-	}
+	
   </style>
