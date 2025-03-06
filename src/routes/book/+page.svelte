@@ -114,23 +114,6 @@
             
         }
     </style>
-	<!-- 
-</head>
-<body>
-    <div class="container">
-        <div class="book-cover">
-            <img src="CompilerDesigncoverpage.jpeg" alt="Compiler Design Book Cover">
-        </div>
-        <div class="content">
-            <p class="year">1946</p>
-            <h1>Compiler Design</h1>
-            <p class="author">Wilhelm, R. (Reinhard)</p>
-            <p class="description">
-                "Compiler Design" by Reinhard Wilhelm is a comprehensive and detailed resource that focuses on the theoretical and practical aspects of compiler construction. The book is highly informative but can be challenging to read due to its dense content and mathematical formulas, making it more suitable for academic and professional readers rather than general audiences. It is praised for its clear code generation examples and visual aids, though it requires a deep understanding of the material and solving exercises to fully grasp the concepts.
-            </p>
-        </div>
-    </div>
-</body>
-</html> -->
+
   
   

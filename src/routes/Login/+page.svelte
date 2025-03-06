@@ -83,35 +83,49 @@
 
     h2 {
         margin-bottom: 20px;
+    color: #EDDDBF;
     }
 
-    .input-field {
-        background: #d3d3d3; 
-        border-radius: 30px;
-        padding: 10px 20px;
-        width: 300px;
-        display: flex;
-        align-items: center;
-    }
+/* Input Container */
+.input-field {
+    background: #EDDDBF; 
+    border-radius: 30px;
+    padding: 20px 20px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+}
 
-    .login-btn {
-        background-color: #d3d3d3; 
-        color: #4d51b1; 
-        font-size: 16px;
-        font-weight: bold;
-        border: none;
-        border-radius: 30px;
-        padding: 10px 25px;
-        cursor: pointer;
-        text-transform: uppercase;
-        width: 125px;
-        height: 40px;
-        font-family: 'IBM Plex Mono', sans-serif;
-    }
+/* Input Field 
+.input-field input {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    font-size: 16px;
+    color: #333;
+}*/
 
-    .login-btn:hover {
-        background: #1F263A;
-    }
+
+.login-btn {
+    background-color: #eedfc3b4; 
+    color: #5c523f; 
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 125px;
+    height: 40px;
+    font-family: 'IBM Plex Mono', sans-serif;
+}
+
+.login-btn:hover {
+    background-color: #d4c1a1;
+		transform: scale(1.05);
+}
 
     .loader {
         border: 4px solid #f3f3f3; 
