@@ -49,7 +49,7 @@
 	{#if data.user}
 		<h1>{data.user.username}!</h1>
 		<button on:click={logout}>
-			<img src="logout.png" alt="logout" width="100px" height="100px">
+			<img src="-S8+-icons.png" alt="account" width="100px" height="100px">
 		</button>
 	{:else}
 		<a href="/login">
