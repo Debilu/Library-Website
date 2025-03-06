@@ -60,7 +60,7 @@
         background: url('Welcome1.png') no-repeat center;
         background-size: contain; 
         width: auto; 
-        height: 80px; 
+        height: 150px; 
         display: block;
         margin: 0 auto;
     }
