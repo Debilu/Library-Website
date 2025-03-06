@@ -21,7 +21,7 @@
 <style>
 	header {
 		padding: 1rem;
-		background-color: none;
+		background-color: #1f263a;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -47,6 +47,7 @@
 	</nav>
 
 	{#if data.user}
+		<h1>{data.user.username}!</h1>
 		<button on:click={logout}>
 			<img src="logout.png" alt="logout" width="100px" height="100px">
 		</button>

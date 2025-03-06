@@ -3,9 +3,9 @@
   </script>
   <main>
 		{#if data.user}
-		<h1>Welcome back, {data.user.username}!</h1>
+		<img src="Welcome1.png" alt="Welcome" class="logo">
 		{:else}
-		<h1 class="logo">Welcome to the Library</h1>
+		<img src="Welcome1.png" alt="Welcome" class="logo">
 		<p>
 			<a href="/login">Login</a> to access your account and personalized recommendations.
 			<br><br>
@@ -18,13 +18,22 @@
 			</form>
 		</div>
 		<br>
-		<div class="image-container">
-			<img src="library image.png" alt="Library Bookshelf">
+		<div class="banner-container">
+			<img src="library image.png" alt="Library Banner" class="banner-image">
+			<div class="banner-overlay">
+				<div class="banner-item">
+					<img src="freq2.png" alt="Frequently Taken Books" class="banner-icon">
+					<p>Frequently taken <br> Books</p>
+				</div>
+				<div class="banner-item">
+					<img src="reco2.png" alt="Personalized Recommendations" class="banner-icon">
+					<p>Personalised <br> Recommendations</p>
+				</div>
+			</div>
 		</div>
 		<div>
-			<p>Explore books and get personalized recommendations.</p>
+			<p>Explore books and get personalised recommendations.</p>
 		</div>
-				
   </main>
   <style>
 	* {
@@ -34,40 +43,40 @@
 		font-family: 'Poppins', sans-serif;
 	}
 	main {
-	  background-image: url('loginpage_bg.png');
-	  background-size: cover;
-	  background-position: center;
-	  background-attachment: fixed;
-	  height: 100vh;
-	  display: flex;
-	  flex-direction: column;
-	  justify-content: center;
-	  align-items: center;
-	  text-align: center;
-	  color: white;
+		background-image: url('loginpage_bg.png');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		/* height: 100vh; */
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		color: white;
 	}
 
 	.logo {
-    background: url('Welcome1.png') no-repeat center;
-    background-size: contain;
-    width: 200px; 
-    height: 80px; 
-    text-indent: -9999px;
-    overflow: hidden;
-    display: block;
-	}
+        background: url('Welcome1.png') no-repeat center;
+        background-size: contain; 
+        width: auto; 
+        height: 80px; 
+        display: block;
+        margin: 0 auto;
+    }
 
 	input[type="text"] {
-    width: 100%; 
-	height: 40px;
-    max-width: 700px; 
-    padding: 12px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 40px; 
-    background-color: #eedfc3b4; 
-    color: #333; 
-    outline: none; 
+		margin-bottom: 10px;
+		width: 100%; 
+		height: 40px;
+		max-width: 700px; 
+		padding: 12px 20px;
+		font-size: 16px;
+		border: none;
+		border-radius: 40px; 
+		background-color: #eedfc3b4; 
+		color: #333; 
+		outline: none; 
 	}
 	
 	input[type="text"]::placeholder {
@@ -100,21 +109,58 @@
 		background-color: #b8a389;
 		transform: scale(0.98);
 	}
-
-	.image-container {
+	
+	.banner-container {
 		position: relative;
 		width: 100%;
-		max-width: auto;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin: 0 20px;
+		max-width: 1100px; /* Adjust width if needed */
+		margin: 0 auto;
 		overflow: hidden;
+		border-radius: 20px; /* Soft rounded edges */
 	}
 
-	.image-container img {
-		width: 80%;
+	.banner-image {
+		width: 100%;
 		height: auto;
-		border-radius: 150px;
+		display: block;
+		filter: brightness(80%);
+		border-radius: 20px; /* Match the container */
 	}
+
+	.banner-overlay {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		width: 90%;
+		text-align: center;
+	}
+
+	.banner-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: white;
+		font-size: 20px;
+		font-weight: bold;
+		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+	}
+
+	.banner-icon {
+		width: 60px;
+		height: 60px;
+		margin-bottom: 10px;
+	}
+
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		.banner-overlay {
+			flex-direction: column;
+			gap: 20px;
+		}
+	}
+
   </style>
