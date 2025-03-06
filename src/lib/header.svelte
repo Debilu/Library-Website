@@ -42,14 +42,14 @@
 <header>
 	<nav>
 		<a href="/">
-		<img src = "liblogo.png" alt = 'logo' width = '50px' height = '50px'>
+		<img src = "liblogo.png" alt = 'logo' width = '35px' height = '50px'>
 		</a>
 	</nav>
 
 	{#if data.user}
-		<h1>{data.user.username}!</h1>
+		<h2>{data.user.username}!</h2>
 		<button on:click={logout}>
-			<img src="logout.png" alt="logout" width="100px" height="100px">
+			<img src="-S8+-icons.png" alt="account" width="50px" height="50px">
 		</button>
 	{:else}
 		<a href="/login">
