@@ -2,3 +2,15 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import url('https://use.typekit.net/your-typekit-id.css');
+
+/* src/app.css */
+body {
+    background-image: url('loginpage_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}

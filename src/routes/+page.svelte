@@ -43,19 +43,18 @@
 		font-family: 'Poppins', sans-serif;
 	}
 	main {
-		background-image: url('loginpage_bg.png');
-		background-size: cover;
-		background-position: center;
-		background-attachment: fixed;
-		/* height: 100vh; */
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		color: white;
-	}
-
+    /* Remove padding-top */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}	
 	.logo {
         background: url('Welcome1.png') no-repeat center;
         background-size: contain; 
