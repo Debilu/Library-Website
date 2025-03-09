@@ -40,7 +40,7 @@
                 <input bind:value={username} type="text" placeholder="Username" required class="input-field" />
                 <input bind:value={password} type="password" placeholder="Password" required class="input-field" />
                 {#if loading}
-                    <button type="submit" class="login-btn" disabled>
+                    <button type="submit" class="login-btn" disabled>...
                         <div class="loader"></div> 
                     </button>
                 {:else}
@@ -56,7 +56,6 @@
         margin: 0;
         padding: 0;
         font-family: Arial, sans-serif;
-        background-image: url('loginpage_bg.png');
         background-size: cover;
         height: 100vh;
         display: flex;
@@ -72,60 +71,55 @@
     }
 
     .login-box {
-        background-image: url('loginBox.png');
+        background-color: #00000058;
         padding: 30px;
         border-radius: 15px;
         width: 350px;
         text-align: center;
-        color: white;
+        color: black;
         margin: auto;
+        
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center; 
+        height: 100%;
     }
 
     h2 {
         margin-bottom: 20px;
-    color: #EDDDBF;
+        color: #EDDDBF;
     }
 
-/* Input Container */
-.input-field {
-    background: #EDDDBF; 
-    border-radius: 30px;
-    padding: 20px 20px;
-    width: 300px;
-    display: flex;
-    align-items: center;
-}
+    .input-field {
+        color: #5c523f; 
+        background: #EDDDBF; 
+        border-radius: 15px;
+        padding: 20px 20px;
+        width: 300px;
+        display: flex;
+        align-items: center;
+    }
 
-/* Input Field 
-.input-field input {
-    border: none;
-    outline: none;
-    background: none;
-    width: 100%;
-    font-size: 16px;
-    color: #333;
-}*/
+    .login-btn {
+        background-color: #eedfc3b4; 
+        color: #5c523f; 
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 30px;
+        padding: 10px 25px;
+        cursor: pointer;
+        text-transform: uppercase;
+        width: 125px;
+        height: 40px;
+        font-family: 'IBM Plex Mono', sans-serif;
+    }
 
-
-.login-btn {
-    background-color: #eedfc3b4; 
-    color: #5c523f; 
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 30px;
-    padding: 10px 25px;
-    cursor: pointer;
-    text-transform: uppercase;
-    width: 125px;
-    height: 40px;
-    font-family: 'IBM Plex Mono', sans-serif;
-}
-
-.login-btn:hover {
-    background-color: #d4c1a1;
-		transform: scale(1.05);
-}
+    .login-btn:hover {
+        background-color: #d4c1a1;
+        transform: scale(1.05);
+    }
 
     .loader {
         border: 4px solid #f3f3f3; 
